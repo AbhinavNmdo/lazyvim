@@ -32,7 +32,6 @@ maps.n["<C-q>"] = { "<cmd>qa!<cr>", desc = "Force quit" }
 maps.n["|"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
 maps.n["\\"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
 -- TODO: Remove when dropping support for <Neovim v0.10
-maps.i["<C-H>"] = { "<C-w>", desc = "Remove whole word" }
 if not vim.ui.open then maps.n["gx"] = { utils.system_open, desc = "Open the file under cursor with system app" } end
 
 -- Plugin Manager
@@ -457,5 +456,11 @@ maps.n["<leader>uu"] = { ui.toggle_url_match, desc = "Toggle URL highlight" }
 maps.n["<leader>uw"] = { ui.toggle_wrap, desc = "Toggle wrap" }
 maps.n["<leader>uy"] = { ui.toggle_syntax, desc = "Toggle syntax highlighting (buffer)" }
 maps.n["<leader>uh"] = { ui.toggle_foldcolumn, desc = "Toggle foldcolumn" }
+
+-- My settings
+maps.i["<C-H>"] = { "<C-w>", desc = "Remove whole word" }
+maps.i["{{"] = { "{{  }}<Esc>hhi", desc = "Balde Space" }
+maps.i["{!!"] = { "{!!  !!}<Esc>hhhi", desc = "Balde Space" }
+maps.i["{--"] = { "{--  --}<Esc>hhhi", desc = "Balde Space" }
 
 utils.set_mappings(astronvim.user_opts("mappings", maps))
